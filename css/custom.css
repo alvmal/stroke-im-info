@@ -4,7 +4,7 @@ a {
 
 .btn {
     background-color: white;
-/*    border: 2px solid white;*/
+    /*    border: 2px solid white;*/
 }
 
 .navbar {
@@ -63,6 +63,24 @@ section .home-text {
 
 #action {
     background-color: #e9f1ec;
+    background-attachment: scroll;
+    background-image: url("../images/action-bg.jpg");
+    background-size: cover;
+}
+
+#action .container {
+    margin: 0 auto;
+    max-width: 580px;
+    text-align: center;
+}
+
+#action a {
+    margin-top: 50px;
+    color: white;
+}
+
+#action .btn {
+    background-color: #e67158;
 }
 
 footer {
