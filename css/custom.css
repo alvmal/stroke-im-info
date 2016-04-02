@@ -1,3 +1,5 @@
+/***** Bootstrap.css modifications *****/
+
 a {
     color: #e67158;
 }
@@ -11,10 +13,10 @@ a {
     margin-bottom: 0px;
 }
 
-.navbar-default {
+.navbar-inverse {
     background-color: transparent;
     border: medium none;
-    padding: 25px 0;
+    padding: 20px 0;
     transition: padding 0.3s ease 0s;
     position: absolute;
     top: 0;
@@ -23,6 +25,52 @@ a {
     z-index: 20;
 }
 
+.navbar-inverse .navbar-nav>li>a:focus,
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: #0B465C;
+}
+
+
+/*
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    background-color: transparent;
+    color: #0B465C;
+}
+*/
+
+.navbar-default {
+    background-color: #e9f1ec;
+}
+
+nav.navbar.navbar-default.navbar-static-top {
+    padding: 20px 0;
+}
+
+.navbar-brand {
+    padding: 10px 25px 10px 15px;
+}
+
+@media (min-width: 768px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-nav {
+        margin: 0 -15px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-header {
+        float: left;
+    }
+}
+
+
+/*************/
+
+
+/***** Custom modifications *****/
+
 header {
     background-attachment: scroll;
     background-image: url("../images/home-bg.jpg");
@@ -30,6 +78,17 @@ header {
     background-size: cover;
     height: 626px;
     color: white;
+}
+
+#heading {
+    background-position: center bottom;
+    background-size: auto;
+    min-height: 170px;
+    height: auto;
+}
+
+#heading h1 {
+    padding-top: 75px;
 }
 
 header .home-text,
@@ -55,6 +114,10 @@ header .home-text a {
 
 section {
     padding: 100px 0;
+}
+
+#content {
+    padding: 50px 15px;
 }
 
 section .home-text {
@@ -87,4 +150,12 @@ footer {
     background-color: #0B465C;
     padding: 50px 0;
     color: white;
+}
+
+.p-t-10 {
+    padding-top: 10px;
+}
+
+.p-b-30 {
+    padding-bottom: 30px;
 }
