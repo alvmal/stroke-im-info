@@ -199,3 +199,21 @@ footer a:hover {
 .p-b-30 {
     padding-bottom: 30px;
 }
+
+
+
+.avatar .dropdown-menu {
+    width: 100px !important;
+}
+.avatar .dropdown-menu li {
+    width: 50px;
+}
+.avatar .dropdown-menu li a {
+    width: 50px;
+}
+.avatar .dropdown-menu li a img {
+    width: 50px;
+}
+img#avatar-img-final {
+   width:25px;
+}

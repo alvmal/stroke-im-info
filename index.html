@@ -60,8 +60,24 @@
                     </li>
                 </ul>
 -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="login.html">Log In</a></li>
+                <ul id="login-ul" class="nav navbar-nav navbar-right">
+                    <li class="signedout-stuff"><a href="login.html">Log In</a></li>
+                    <li class="signedin-stuff" style="display:none;"><a id="hey-name" ></a></li>
+                    <li class="signedin-stuff" style="display:none;"><a href="#"><img id="avatar-img-final" src =""></a></li>
+
+                    <li class="signedin-stuff" style="display:none;">
+                        <div class="avatar dropdown">
+                            <button class="dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+
+                                <li><a href="#"><img class="avatar-img" id="1" src = "https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/andrew.png"></a></li>
+                                <li><a href="#"><img class="avatar-img" id="2" src = "https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/matthew.png"></a></li>
+                                <li><a href="#"><img class="avatar-img" id="3" src = "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Black-Widow-icon.png"></a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="signedin-stuff" style="display:none;"><a href="#" id="signout">Sign out</a></li>
                 </ul>
             </div>
             <!--/.nav-collapse -->
@@ -73,7 +89,7 @@
         <div class="container home-text">
             <h1>The Hub for personalised Stroke Information.</h1>
             <p>Sign-up today to receive exclusive access to our community of stroke experts and stroke survivors!</p>
-            <a class="btn btn-lg" href="#services">Sign-Up Now</a>
+            <a class="btn btn-lg" href="signup.html">Sign-Up Now</a>
         </div>
     </header>
 
@@ -105,7 +121,7 @@
         <div class="container">
             <h2 class="section-heading">Join our Community Today...</h2>
             <h4 class="section-subheading text-muted">and speak to stroke experts and stroke survivors.</h4>
-            <a class="btn btn-lg" href="#services">Join Now</a>
+            <a class="btn btn-lg" href="signup.html">Join Now</a>
         </div>
     </section>
 
@@ -118,8 +134,49 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(
+                function() {
+                    var signedin = $.cookie('stroke-signedin');
+                    var name = $.cookie('stroke-name');
+                    var email = $.cookie('stroke-email');
+                    var password = $.cookie('stroke-password');
+                    var avatar = $.cookie('stroke-avatar');
+                    if(signedin === "true" && name && email && password) {
+                        $("#login-ul").find(".signedout-stuff").css("display", "none");
+                        $("#login-ul").find(".signedin-stuff").css("display", "inline-block");
+                        $("#hey-name").append('Hi ' + name);
+                        if(avatar != "") {
+                            $('#avatar-img-final').attr('src', avatar);
+                        }
+                    }
+
+                    $("#signout").click(function() {
+                        $.cookie('stroke-signedin', "false");
+                        $(location).attr('href', 'index.html');
+                    })
+
+                    $(".avatar-img").click(function(object) {
+                        var e = object.toElement;
+                        if($(e).attr('id') == 1) {
+                            $.cookie('stroke-avatar', 'https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/andrew.png');
+                        }
+                        else if($(e).attr('id') == 2) {
+                            $.cookie('stroke-avatar', 'https://cdn0.iconfinder.com/data/icons/iconshock_guys/512/matthew.png');
+                        }
+                        else if($(e).attr('id') == 3) {
+                            $.cookie('stroke-avatar', 'http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Black-Widow-icon.png');
+                        }
+                        else {
+                            $.cookie('stroke-avatar', "");
+                        }
+                        $(location).attr('href', 'index.html');
+                    })
+                });
+    </script>
 </body>
 
 </html>
