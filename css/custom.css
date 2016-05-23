@@ -13,13 +13,13 @@ p {
     font-size: 16px;
 }
 
-a {
-    color: #e67158;
+.btn {
+    background-color: #0B465C;
+    border: 0px;
 }
 
-.btn {
-    background-color: white;
-    /*    border: 2px solid white;*/
+a {
+    color: #e67158;
 }
 
 .navbar {
@@ -147,6 +147,11 @@ header .home-text a {
     color: #08642d;
 }
 
+header .btn {
+    background-color: white;
+    /*    border: 2px solid white;*/
+}
+
 section {
     padding: 100px 0;
 }
@@ -201,6 +206,10 @@ footer p {
     font-size: 12px;
 }
 
+footer a {
+    color: #8c9fa7;
+}
+
 footer a:focus,
 footer a:hover {
     color: #e67158;
@@ -218,11 +227,11 @@ footer li {
 
 footer .social-icons li {
     display: inline-block;
-    padding: 0;
+    padding-right: 5px;
 }
 
 footer .social-icons li a {
-    background: #e67158 none repeat scroll 0 0;
+    background: #8c9fa7 none repeat scroll 0 0;
     border-radius: 100%;
     color: #0B465C !important;
     display: block;
@@ -237,10 +246,6 @@ footer .footer-copyright {
     background: #06242f none repeat scroll 0 0;
     margin-top: 40px;
     padding: 30px 0 10px;
-}
-
-footer .footer-copyright a {
-    color: #8c9fa7 !important;
 }
 
 .p-t-10 {
