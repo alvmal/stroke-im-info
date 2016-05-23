@@ -87,6 +87,12 @@ nav.navbar.navbar-default.navbar-static-top {
 
 
 /***** Custom modifications *****/
+.img-home {
+    background-size: cover;
+    height: 140px;
+    width: 140px;
+    margin: 80px auto 20px;
+}
 
 header {
     background-attachment: scroll;
@@ -146,7 +152,7 @@ section {
 }
 
 section .home-text {
-    padding: 0 30px 80px;
+    padding: 0 30px;
 }
 
 #action {
