@@ -279,3 +279,27 @@ footer .back-to-top {
 img#avatar-img-final {
     width: 25px;
 }
+
+.rating {
+    direction: rtl;
+    font-size: 28px;
+    unicode-bidi: bidi-override;
+}
+
+
+.rating span.star::before {
+    color: #777;
+    content: "";
+}
+
+.rating span.star {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.rating span.star:hover::before, .rating span.star:hover ~ span.star::before {
+    color: #e67158;
+    content: "";
+}
